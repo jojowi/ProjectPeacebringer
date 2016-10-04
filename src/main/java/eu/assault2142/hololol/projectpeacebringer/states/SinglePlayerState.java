@@ -52,13 +52,12 @@ public class SinglePlayerState extends GameplayState {
         geom.setLocalTranslation(0, 1.5f, 0);
         character = new Node();
         character.attachChild(geom);
-        character.addControl(new NavigationControl(map));
         SelectableControl sc = new SelectableControl();
         sc.setMarker(marker);
         character.addControl(sc);
         character.setLocalTranslation(new Vector3f(-20, tq.getHeight(new Vector2f(-20, 0)) + 10, 0));
 
-        MoveableControl physicsCharacter = new MoveableControl(0.3f, 2.5f, 8f);
+        MoveableControl physicsCharacter = new MoveableControl(0.3f, 2.5f, 8f, map);
         character.addControl(physicsCharacter);
         bulletAppState.getPhysicsSpace().add(physicsCharacter);
         physicsCharacter.warp(new Vector3f(-20, tq.getHeight(new Vector2f(-20, 0)) + 10, 0));
