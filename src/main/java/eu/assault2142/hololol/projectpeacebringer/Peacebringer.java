@@ -4,8 +4,9 @@
  */
 package eu.assault2142.hololol.projectpeacebringer;
 
-import com.jme3.app.FlyCamAppState;
+import com.jme3.app.DebugKeysAppState;
 import com.jme3.app.SimpleApplication;
+import com.jme3.app.StatsAppState;
 import com.jme3.renderer.RenderManager;
 import com.jme3.system.AppSettings;
 import com.simsilica.lemur.GuiGlobals;
@@ -15,36 +16,42 @@ import eu.assault2142.hololol.projectpeacebringer.states.ui.MainMenuState;
 import java.util.prefs.BackingStoreException;
 
 /**
+ * The Main Application
  *
- * @author jojow
+ * @author hololol2
  */
 public class Peacebringer extends SimpleApplication {
 
-    public static Peacebringer APP;
     private Settings mysettings;
 
     public static void main(String[] args) throws BackingStoreException {
-        APP = new Peacebringer();
-        APP.mysettings = Settings.load();
-        APP.settings = new AppSettings(true);
-        APP.settings.setResolution(APP.mysettings.getWidth(), APP.mysettings.getHeight());
-        APP.settings.setFullscreen(true);
-        APP.settings.setFrequency(APP.mysettings.getFramerate());
-        APP.settings.setVSync(APP.mysettings.isVsync());
-        APP.settings.setSamples(APP.mysettings.getSamples());
-        APP.settings.setFrameRate(APP.mysettings.getFramerate());
-        APP.setShowSettings(false);
-        APP.start();
+        Peacebringer app = new Peacebringer();
+        app.mysettings = Settings.load();
+        app.settings = new AppSettings(true);
+        app.settings.setResolution(app.mysettings.getWidth(), app.mysettings.getHeight());
+        app.settings.setFullscreen(true);
+        app.settings.setFrequency(app.mysettings.getFramerate());
+        app.settings.setVSync(app.mysettings.isVsync());
+        app.settings.setSamples(app.mysettings.getSamples());
+        app.settings.setFrameRate(app.mysettings.getFramerate());
+        app.setShowSettings(false);
+        app.start();
+    }
+
+    public Peacebringer() {
+        super(new StatsAppState(), new DebugKeysAppState());
     }
 
     @Override
     public void simpleInitApp() {
-        getStateManager().detach(getStateManager().getState(FlyCamAppState.class));
+        // init Lemur
         GuiGlobals.initialize(this);
         BaseStyles.loadGlassStyle();
         GuiGlobals.getInstance().getStyles().setDefaultStyle("glass");
         LemurHelper.init(mysettings.getWidth(), mysettings.getHeight());
+        // show Cursor
         inputManager.setCursorVisible(true);
+        //start Menu
         MainMenuState mainMenuState = new MainMenuState();
         stateManager.attach(mainMenuState);
     }
@@ -55,11 +62,6 @@ public class Peacebringer extends SimpleApplication {
 
     @Override
     public void simpleRender(RenderManager rm) {
-        /* (optional) Make advanced modifications to frameBuffer and scene graph. */
-    }
-
-    public Settings getSettings() {
-        return mysettings;
     }
 
     public void updateGraphicSettings() {
