@@ -10,7 +10,6 @@ import com.jme3.renderer.RenderManager;
 import com.jme3.system.AppSettings;
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.style.BaseStyles;
-import eu.assault2142.hololol.projectpeacebringer.states.NiftyAppState;
 import eu.assault2142.hololol.projectpeacebringer.states.ui.LemurHelper;
 import eu.assault2142.hololol.projectpeacebringer.states.ui.MainMenuState;
 import java.util.prefs.BackingStoreException;
@@ -46,8 +45,6 @@ public class Peacebringer extends SimpleApplication {
         GuiGlobals.getInstance().getStyles().setDefaultStyle("glass");
         LemurHelper.init(mysettings.getWidth(), mysettings.getHeight());
         inputManager.setCursorVisible(true);
-        NiftyAppState niftystate = new NiftyAppState();
-        //stateManager.attach(niftystate);
         MainMenuState mainMenuState = new MainMenuState();
         stateManager.attach(mainMenuState);
     }

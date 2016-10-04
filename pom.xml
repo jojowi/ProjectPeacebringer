@@ -12,35 +12,6 @@
             <version>3.1.0-beta1</version>
         </dependency>
         <dependency>
-            <groupId>com.github.nifty-gui</groupId>
-            <artifactId>nifty</artifactId>
-            <version>1.4.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.nifty-gui</groupId>
-            <artifactId>nifty-default-controls</artifactId>
-            <version>1.4.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jmonkeyengine</groupId>
-            <artifactId>jme3-niftygui</artifactId>
-            <version>3.1.0-beta1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>lessvoid</groupId>
-                    <artifactId>nifty</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>lessvoid</groupId>
-                    <artifactId>nifty-default-controls</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>lessvoid</groupId>
-                    <artifactId>nifty-style-black</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>MonkeyNav</artifactId>
             <version>${project.version}</version>
@@ -54,11 +25,6 @@
             <groupId>org.jmonkeyengine</groupId>
             <artifactId>jme3-bullet</artifactId>
             <version>3.1.0-beta1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.nifty-gui</groupId>
-            <artifactId>nifty-style-black</artifactId>
-            <version>1.4.2</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
