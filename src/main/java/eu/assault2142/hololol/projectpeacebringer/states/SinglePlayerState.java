@@ -64,7 +64,6 @@ public class SinglePlayerState extends GameplayState {
         physicsCharacter.warp(new Vector3f(-20, tq.getHeight(new Vector2f(-20, 0)) + 10, 0));
 
         app.getRootNode().attachChild(character);
-
         app.getStateManager().getState(SelectAppState.class).addSelectable(character);
     }
 

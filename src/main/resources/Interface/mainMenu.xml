@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.4.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.4.xsd http://nifty-gui.sourceforge.net/nifty-1.4.xsd">
+    <useStyles filename="nifty-default-styles.xml" />
+    <useControls filename="nifty-default-controls.xml" />
+    <resourceBundle id="locale" filename="Interface/Localization/locale" />
+    <screen id="mainMenu" controller="de.peacebringer.ui.controller.MainMenuController">
+        <layer id="layer" childLayout="absolute">
+            <control name="button" id="button.Main.Singleplayer" label="${locale.button.singleplayer}" height="5%" width="40%" x="30%" y="20%" >
+                <interact onClick="startSingle()"/>
+            </control>
+            <control name="button" id="button.Main.Multiplayer" label="${locale.button.multiplayer}" height="5%" width="40%" x="30%" y="40%">
+                <interact onClick="startGame()"/>
+            </control>
+            <control name="button" id="button.Main.Options" label="${locale.button.options}" height="5%" width="40%" x="30%" y="60%" >
+                <interact onClick="toOptions()"/>
+            </control>
+            <control name="button" id="button.Main.Exit" label="${locale.button.exit}" height="5%" width="40%" x="30%" y="80%" >
+                <interact onClick="exit()"/>
+            </control>
+        </layer>
+    </screen>
+</nifty>

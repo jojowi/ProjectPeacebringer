@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<nifty xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://nifty-gui.lessvoid.com/nifty-gui" xsi:schemaLocation="https://raw.githubusercontent.com/void256/nifty-gui/1.4/nifty-core/src/main/resources/nifty.xsd https://raw.githubusercontent.com/void256/nifty-gui/1.4/nifty-core/src/main/resources/nifty.xsd">
+    <useControls filename="nifty-default-controls.xml"/>
+    <screen id="optionsScreen" controller="de.peacebringer.ui.controller.OptionMenuController">
+        <layer id="optionmenu" childLayout="absolute">
+            <control name="tabGroup" id="edit_tabs" buttonHeight="50px" width="100%" buttonWidth="50%" height="90%">
+                <control name="tab" id="tab_1" caption="Graphics">
+                    <panel id="panel0" childLayout="absolute" width="90%" x="5%" y="5%" style="nifty-panel-simple" height="90%">
+                        <control name="radioButtonGroup" id="RadioGroup-1"/>
+                        <control name="label" id="label0" color="#000" width="10%" x="10%" y="10%" text="Resolution" font="aurulent-sans-16.fnt" height="3%"/>
+                        <control name="label" id="label1" color="#000" width="10%" x="10%" y="25%" text="VSync" font="aurulent-sans-16.fnt" height="3%"/>
+                        <control name="label" id="vsync" color="#000" width="5%" x="25%" y="25%" text="Aktiviert" font="aurulent-sans-16.fnt" height="3%"/>
+                        <control name="radioButton" id="option-1" x="30%" y="25%" group="RadioGroup-1"/>
+                        <control name="label" id="novsync" color="#000" width="5%" x="35%" y="25%" text="Deaktiviert" font="aurulent-sans-16.fnt" height="3%"/>
+                        <control name="radioButton" id="option-2" x="40%" y="25%" group="RadioGroup-1"/>
+                        <control name="label" id="label8" color="#000" width="10%" x="10%" y="40%" text="Graphic Quality" font="aurulent-sans-16.fnt" height="3%"/>
+                        <control name="label" id="label9" color="#000" width="10%" x="10%" y="55%" text="Multisampling" font="aurulent-sans-16.fnt" height="3%"/>
+                        <control name="dropDown" id="dropdownresolution" width="20%" x="30%" y="10%" displayItems="8" height="3%"/>
+                        <control name="dropDown" id="dropdownquality" width="20%" x="30%" y="40%" displayItems="4" height="3%"/>
+                        <control name="dropDown" id="dropdownsampling" width="20%" x="30%" y="55%" displayItems="4" height="3%"/>
+                        <control name="dropDown" id="dropdownshadows" width="20%" x="30%" y="70%" displayItems="4" height="3%"/>
+                        <control name="label" id="label10" color="#000" width="10%" x="10%" y="70%" text="Shadows" font="aurulent-sans-16.fnt" height="3%"/>
+                    </panel>
+                </control>
+                <control name="tab" id="tab_2" caption="tab2"/>
+            </control>
+            <control name="button" id="optionsave" label="Speichern" x="50%" y="92%" width="10%" height="6%">
+                <interact onClick="save()"/>
+            </control>
+            <control name="button" id="optionback" label="Abbrechen" x="70%" y="92%" width="10%" height="6%">
+                <interact onClick="toMain()"/>
+            </control>
+        </layer>
+    </screen>
+</nifty>
