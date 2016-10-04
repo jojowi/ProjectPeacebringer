@@ -37,11 +37,10 @@ public class NavigationControl extends AbstractControl {
             Vector2f aiPosition = new Vector2f(spatialPosition.x, spatialPosition.z);
             Vector2f waypoint2D = waypointPosition;
             float distance = aiPosition.distance(waypoint2D);
-            if (distance > 1f) {
+            if (distance > 0.1f) {
                 Vector2f direction = waypoint2D.subtract(aiPosition);
                 direction.mult(tpf);
-                spatial.getControl(GameCharacterControl.class).setViewDirection(new Vector3f(direction.x, 0, direction.y).normalize());
-                spatial.getControl(GameCharacterControl.class).onAction("MoveForward", true, 1);
+                spatial.getControl(MoveableControl.class).setDirection(new Vector3f(direction.x, 0, direction.y).normalize());
             } else {
                 waypointPosition = null;
             }
@@ -49,7 +48,7 @@ public class NavigationControl extends AbstractControl {
             path.nextWaypoint();
             waypointPosition = path.getCurrentWaypoint();
         } else {
-            spatial.getControl(GameCharacterControl.class).onAction("MoveForward", false, 1);
+            spatial.getControl(MoveableControl.class).stop();
         }
     }
 

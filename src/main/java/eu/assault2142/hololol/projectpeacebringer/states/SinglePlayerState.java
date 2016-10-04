@@ -16,7 +16,7 @@ import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
 import com.jme3.scene.shape.Quad;
-import eu.assault2142.hololol.projectpeacebringer.controls.GameCharacterControl;
+import eu.assault2142.hololol.projectpeacebringer.controls.MoveableControl;
 import eu.assault2142.hololol.projectpeacebringer.controls.NavigationControl;
 import eu.assault2142.hololol.projectpeacebringer.controls.SelectableControl;
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class SinglePlayerState extends GameplayState {
         character.addControl(sc);
         character.setLocalTranslation(new Vector3f(-20, tq.getHeight(new Vector2f(-20, 0)) + 10, 0));
 
-        GameCharacterControl physicsCharacter = new GameCharacterControl(0.3f, 2.5f, 8f);
+        MoveableControl physicsCharacter = new MoveableControl(0.3f, 2.5f, 8f);
         character.addControl(physicsCharacter);
         bulletAppState.getPhysicsSpace().add(physicsCharacter);
         physicsCharacter.warp(new Vector3f(-20, tq.getHeight(new Vector2f(-20, 0)) + 10, 0));
