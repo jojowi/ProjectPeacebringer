@@ -41,6 +41,7 @@ public class MainMenuState extends AbstractAppState {
         }));
         myWindow.attachChild(LemurHelper.createButton("Options", 30, 42.5f, 40, 5, 20, true, (Command<Button>) (Button source) -> {
             app.getStateManager().detach(this);
+            app.getStateManager().attach(new OptionsState());
         }));
         myWindow.attachChild(LemurHelper.createButton("Exit", 30, 22.5f, 40, 5, 20, true, (Command<Button>) (Button source) -> {
             app.stop();
